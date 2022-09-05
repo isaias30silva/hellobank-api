@@ -9,28 +9,32 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ibm.hellobank.api.dto.NovaMovimentacao;
 import com.ibm.hellobank.api.dto.NovoCorrentista;
 import com.ibm.hellobank.api.model.Correntista;
+import com.ibm.hellobank.api.model.Movimentacao;
 import com.ibm.hellobank.api.repository.CorrentistaRepository;
+import com.ibm.hellobank.api.repository.MovimentacaoRepository;
 import com.ibm.hellobank.api.service.CorrentistaService;
+import com.ibm.hellobank.api.service.MovimentacaoService;
 
 @RestController
-@RequestMapping("/correntistas")
-public class CorrentistaController {
+@RequestMapping("/movimentacoes")
+public class MovimentacaoController {
 	
 	@Autowired
-	private CorrentistaRepository repository;
+	private MovimentacaoRepository repository;
 	
 	@Autowired
-	private CorrentistaService service;
+	private MovimentacaoService service;
 	
 	@GetMapping
-	public List<Correntista>findAll() {
+	public List<Movimentacao>findAll() {
 		return repository.findAll();
 	}
 	
 	@PostMapping
-	public void save(@RequestBody NovoCorrentista correntista) {
-		service.save(correntista);
+	public void save(@RequestBody NovaMovimentacao movimentacao) {
+		service.save(movimentacao);
 	}
 }
