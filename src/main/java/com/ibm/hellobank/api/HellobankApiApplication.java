@@ -8,6 +8,7 @@ public class HellobankApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HellobankApiApplication.class, args);
+		
 	}
 
 }
