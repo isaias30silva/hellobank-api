@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `hellobank_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `hellobank_db`;
 -- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
 --
 -- Host: localhost    Database: hellobank_db
@@ -28,8 +30,9 @@ CREATE TABLE `tab_correntista` (
   `conta_saldo` double DEFAULT NULL,
   `cpf` varchar(15) DEFAULT NULL,
   `nome` varchar(60) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +41,7 @@ CREATE TABLE `tab_correntista` (
 
 LOCK TABLES `tab_correntista` WRITE;
 /*!40000 ALTER TABLE `tab_correntista` DISABLE KEYS */;
-INSERT INTO `tab_correntista` VALUES (1,985,2925.33,'12345678910','Isaias'),(2,1662408688760,660,'33344488875','Rosemberg');
+INSERT INTO `tab_correntista` VALUES (1,985,2825.33,'12345678910','Isaias',NULL),(2,1662408688760,660,'33344488875','Rosemberg',NULL),(3,1662472398773,0,'743.213.740-49','Maria Aparecida','maria_aparecida@gmail.com');
 /*!40000 ALTER TABLE `tab_correntista` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,7 +60,7 @@ CREATE TABLE `tab_movimentacao` (
   `valor` double DEFAULT NULL,
   `id_conta` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +69,7 @@ CREATE TABLE `tab_movimentacao` (
 
 LOCK TABLES `tab_movimentacao` WRITE;
 /*!40000 ALTER TABLE `tab_movimentacao` DISABLE KEYS */;
-INSERT INTO `tab_movimentacao` VALUES (1,'2022-09-05 17:37:49.583879','Salario Mes','RECEITA',2500,2),(2,'2022-09-05 17:45:33.607628','Freelancer','RECEITA',1400,1),(3,'2022-09-05 17:56:36.984923','Freelancer','RECEITA',1400,1),(4,'2022-09-05 17:58:06.833674','PIX','RECEITA',330,2),(5,'2022-09-05 17:58:10.397407','PIX','RECEITA',330,2);
+INSERT INTO `tab_movimentacao` VALUES (1,'2022-09-05 17:37:49.583879','Salario Mes','RECEITA',2500,2),(2,'2022-09-05 17:45:33.607628','Freelancer','RECEITA',1400,1),(3,'2022-09-05 17:56:36.984923','Freelancer','RECEITA',1400,1),(4,'2022-09-05 17:58:06.833674','PIX','RECEITA',330,2),(5,'2022-09-05 17:58:10.397407','PIX','RECEITA',330,2),(6,'2022-09-06 10:55:13.761234','Alimentacao','DESPESA',-100,1);
 /*!40000 ALTER TABLE `tab_movimentacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -83,4 +86,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-05 18:17:11
+-- Dump completed on 2022-09-06 11:07:32

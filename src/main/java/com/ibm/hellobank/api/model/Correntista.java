@@ -17,11 +17,14 @@ public class Correntista {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
+	@Column(length = 60)
+	private String nome;
+	
 	@Column(length = 15)
 	private String cpf;
 	
-	@Column(length = 60)
-	private String nome;
+	@Column(length = 100)
+	private String email;
 	
 	@Embedded
 	private Conta conta;
@@ -51,6 +54,12 @@ public class Correntista {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 }
